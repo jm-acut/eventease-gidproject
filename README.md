@@ -1,8 +1,21 @@
 # Event Ease
 
-Event Ease is a mobile-friendly school event management web app. Students can discover school activities, view event information, and register in one place. Staff and admins can review registrations, while admins manage account roles.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_App-2563eb?style=for-the-badge&logo=render&logoColor=white)](https://eventease-gidproject.onrender.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-22+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
-## What the system does
+**Event Ease** is a responsive school event management web app for discovering events, registering for activities, and managing participants.
+
+> [Open the live demo](https://eventease-gidproject.onrender.com/)
+
+## Live Preview
+
+| Environment | Link |
+| --- | --- |
+| Production | [eventease-gidproject.onrender.com](https://eventease-gidproject.onrender.com/) |
+
+The app is hosted on Render. Because it uses a free service tier, the first request may take a few moments while the server starts.
+
+## Features
 
 ### Students
 
@@ -30,8 +43,27 @@ Event Ease is a mobile-friendly school event management web app. Students can di
 
 - Frontend: HTML, CSS, and browser JavaScript
 - Backend: Node.js and Express
-- Database: SQLite, using Node's built-in `node:sqlite`
-- Authentication: JSON Web Tokens; passwords are hashed with `bcryptjs`
+- Database: SQLite with Node's built-in `node:sqlite`
+- Authentication: JSON Web Tokens
+- Password security: `bcryptjs`
+
+## Deploy on Render
+
+1. Push the project to GitHub.
+2. In Render, create a **New > Web Service** and connect the repository.
+3. Use these settings:
+
+   | Setting | Value |
+   | --- | --- |
+   | Runtime | `Node` |
+   | Build command | `npm install` |
+   | Start command | `npm start` |
+   | Health check path | `/` |
+
+4. Add a `JWT_SECRET` environment variable with a strong random value.
+5. Deploy. Render will provide a public URL once the service is healthy.
+
+For SQLite, mount a Render persistent disk for `/var/data` and update the database path in `server.js` before deployment. A disk is not included with the default ephemeral filesystem, so database changes may be lost when the service restarts or redeploys.
 
 ## Run locally
 
