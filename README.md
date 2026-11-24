@@ -117,10 +117,4 @@ The browser app communicates with the Express server using these main routes:
 
 Admin and staff permissions are checked by the server, not just hidden in the interface.
 
-## Before deploying
 
-This project is intended as a local/student project prototype. Before putting it on a public server:
-
-- Replace the development JWT fallback with a strong, private `JWT_SECRET` environment variable.
-- Replace the hard-coded admin bootstrap credentials in `server.js` with a secure setup method. Never publish or share admin credentials.
-- Use HTTPS, protect and back up the SQLite database, and review how accounts and personal information are handled.
